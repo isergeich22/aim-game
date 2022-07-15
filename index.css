@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 700px;
+    margin: auto;    
+    font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.timer {
+    width: 700px;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.678);
+    outline: none;
+    padding: 15px 0 10px;
+}
+
+.start {
+    width: 100px;
+    padding: 10px 15px;
+    font-size: .7rem;
+    text-align: center;
+    border: none;
+    font-family: inherit;
+    background-color: #0f141e;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.start:hover {
+    width: 100px;
+    padding: 10px 15px;
+    border: 1px solid #0f141e;
+    font-family: inherit;
+    background-color: #fff;
+    color: #0f141e;
+    cursor: pointer;
+    transition: all .9s;
+}
+
+h1, .timer, .start {
+    margin-bottom: 3%;
+}
+
+.main {
+    margin: auto;
+    margin-top: 4%;
+}
+
+.time {
+    font-family: 'Comfortaa', cursive;
+    display: flex;
+    margin: auto;
+    width: 48px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.game {
+    border: 1px solid black;
+    width: 700px;
+    height: 400px;        
+    margin: auto;
+}
+
+.square {
+    display: none;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(255, 51, 0);
+}
+
+.form__error {
+    color: red;
+    text-align: left;
+    font-size: 12px;
+    display: block;
+    margin-top: 3px;
+    display: none;
+  }
+
+input:invalid:not(:placeholder-shown) {
+    border-color: red;
+  }
+  input:invalid:not(:placeholder-shown) + .form__error {
+    display: block;
+  }
+  
