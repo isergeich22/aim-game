@@ -6,23 +6,28 @@
     padding: 0;
 }
 
-header {
-    width: 700px;
-    margin: auto;    
-    font-family: 'Comfortaa', cursive;
-}
-
 h1 {
+    font-family: 'Comfortaa', cursive;
     text-align: center;
     margin-top: 2%;
 }
 
-.timer {
+header {
     width: 700px;
+    margin: auto;    
+    font-family: 'Comfortaa', cursive;
+    display: flex;
+    flex-direction: column;
+}
+
+.timer {
+    width: 265px;
     border: none;
     border-bottom: 1px solid rgba(128, 128, 128, 0.678);
     outline: none;
     padding: 15px 0 10px;
+    margin-bottom: 2%;
+    margin: auto;
 }
 
 .start {
@@ -36,6 +41,7 @@ h1 {
     color: #fff;
     cursor: pointer;
     transition: all .3s;
+    margin: auto;
 }
 
 .start:hover {
@@ -58,15 +64,31 @@ h1, .timer, .start {
     margin-top: 4%;
 }
 
-.time {
-    font-family: 'Comfortaa', cursive;
+.info {
     display: flex;
     margin: auto;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.count {
+    font-family: 'Comfortaa', cursive;
+}
+
+.time {
+    font-family: 'Comfortaa', cursive;    
     width: 48px;
     height: 50px;
     text-align: center;
     align-items: center;
     padding: 0 5px;
+    margin-right: 24%;
+}
+
+.gOver {
+    font-family: 'Comfortaa', cursive;
+    color: red;
+    display: none;
 }
 
 .game {
@@ -81,10 +103,8 @@ h1, .timer, .start {
     cursor: pointer;
     margin: 0;
     position: relative;
-    top: 0px;
-    left: 0px;
-    width: 32px;
-    height: 32px;
+    width: 8px;
+    height: 8px;
     background-color: rgb(255, 51, 0);
 }
 
