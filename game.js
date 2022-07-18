@@ -3,7 +3,13 @@
     const square = document.querySelector('.square')
     const number = document.querySelector('.number')
     const gOver = document.querySelector('.gOver')
+    const minute = document.querySelector('#minutes')
+    let timerInput = document.querySelector('#time')
     let i = 0
+    
+    minutes.addEventListener('change', () => {
+        timerInput.value = minutes.value + ' мин.' 
+    })
 
     square.addEventListener('click', () => {
         square.style.top = getRandomInt(0, 365) + 'px'
@@ -20,11 +26,7 @@
 
         return Math.ceil(Math.random() * (max - min)) + min
     }
-//}
-
-// Timer-Logic
-// {
-    let timerInput = document.querySelector('#time')
+    
     let buttonRun = document.querySelector('.start')
     let timerShow = document.querySelector('.time')
 
@@ -32,10 +34,14 @@
         square.style.top = getRandomInt(0, 365) + 'px'
         square.style.left = getRandomInt(0, 665) + 'px'
         number.innerHTML = 0
-        timeMinut = parseInt(timerInput.value) * 60
+        timerInput.value = ''
+        timeMinut = parseInt(minute.value) * 60
+        
         timer = setInterval(() => {
             seconds = timeMinut%60
             minutes = timeMinut/60%60
+
+            
         
             if (timeMinut <= 0) {
 
@@ -48,7 +54,7 @@
                 timerShow.style.color = 'red'
                 timerShow.innerHTML = '0:0'
 
-                timerInput.innerHTML = ''
+                timerInput.value = '1 мин.'
                 
             } else {
 
