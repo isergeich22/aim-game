@@ -7,8 +7,8 @@
     let timerInput = document.querySelector('#time')
     let i = 0
     
-    minutes.addEventListener('change', () => {
-        timerInput.value = minutes.value + ' мин.' 
+    minute.addEventListener('change', () => {
+        timerInput.value = minute.value + ' мин.'
     })
 
     square.addEventListener('click', () => {
@@ -35,7 +35,8 @@
     buttonReRun.addEventListener('click', game)
     buttonRun.addEventListener('click', game)
 
-  function game() {      
+  function game() {
+        minute.disabled = true
         gOver.style.display = 'none'  
         timerShow.style.color = 'black'
         square.style.top = getRandomInt(0, 365) + 'px'
@@ -62,6 +63,10 @@
                 timerShow.innerHTML = '0:0'
 
                 timerInput.value = '1 мин.'
+                
+                minute.disabled = false
+
+                i = 0
                 
             } else {
 
