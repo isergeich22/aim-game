@@ -37,7 +37,11 @@ header {
     font-family: inherit;
 }
 
-.start {
+.buttons {
+    margin: auto;
+}
+
+.start, .rerun {
     width: 100px;
     padding: 10px 15px;
     font-size: .7rem;
@@ -51,7 +55,7 @@ header {
     margin: auto;
 }
 
-.start:hover {
+.start:hover, .rerun:hover {
     width: 100px;
     padding: 10px 15px;
     border: 1px solid #0f141e;
