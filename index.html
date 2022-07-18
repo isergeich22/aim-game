@@ -10,8 +10,9 @@
 </head>
 <body>
     <h1>Aimgame</h1>
-    <header>        
-        <input class="timer" type="text" name="time" id="time" placeholder="Введите кол-во минут для игры от 1 до 5"/>
+    <header>
+        <input type="range" class="volume" id="minutes" min="1" max="5" value="1" step="1">      
+        <input class="timer" type="text" name="time" id="time" value="1 мин." readonly/>
         <button class="start" id="button">Запустить</button>
     </header>
     <section class="main">
