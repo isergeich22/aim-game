@@ -27,16 +27,23 @@
         return Math.ceil(Math.random() * (max - min)) + min
     }
     
-    let buttonRun = document.querySelector('.start')
+    const buttonRun = document.querySelector('.start')
+    const buttonReRun = document.querySelector('.rerun')
     let timerShow = document.querySelector('.time')
 
-    buttonRun.addEventListener('click', () => {        
+    
+    buttonReRun.addEventListener('click', game)
+    buttonRun.addEventListener('click', game)
+
+  function game() {      
+        gOver.style.display = 'none'  
+        timerShow.style.color = 'black'
         square.style.top = getRandomInt(0, 365) + 'px'
         square.style.left = getRandomInt(0, 665) + 'px'
         number.innerHTML = 0
         timerInput.value = ''
         timeMinut = parseInt(minute.value) * 60
-        
+
         timer = setInterval(() => {
             seconds = timeMinut%60
             minutes = timeMinut/60%60
@@ -65,6 +72,6 @@
             }
             --timeMinut
         }, 1000)
-        square.style.display = 'block'
-    })
+    square.style.display = 'block'
+    }
 // }
