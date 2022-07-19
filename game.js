@@ -28,16 +28,19 @@
     }
     
     const buttonRun = document.querySelector('.start')
-    const buttonReRun = document.querySelector('.rerun')
+    const count = document.querySelector('.count')
     let timerShow = document.querySelector('.time')
 
-    
-    buttonReRun.addEventListener('click', game)
     buttonRun.addEventListener('click', game)
 
   function game() {
         minute.disabled = true
-        gOver.style.display = 'none'  
+        gOver.style.display = 'none'
+        count.style.display = 'flex'
+        buttonRun.disabled = true
+        buttonRun.classList.add('disabled')
+        buttonRun.classList.remove('start')
+        timerShow.style.display = 'flex'
         timerShow.style.color = 'black'
         square.style.top = getRandomInt(0, 365) + 'px'
         square.style.left = getRandomInt(0, 665) + 'px'
@@ -60,11 +63,16 @@
                 gOver.style.display = 'flex'
 
                 timerShow.style.color = 'red'
-                timerShow.innerHTML = '0:0'
 
                 timerInput.value = '1 мин.'
                 
                 minute.disabled = false
+                
+                buttonRun.disabled = false
+                buttonRun.classList.remove('disabled')
+                buttonRun.classList.add('start')
+
+                setTimeout(hide, 30000)
 
                 i = 0
                 
@@ -78,5 +86,11 @@
             --timeMinut
         }, 1000)
     square.style.display = 'block'
+    }
+
+    function hide() {
+        timerShow.style.display = 'none'
+        count.style.display = 'none'
+        gOver.style.display = 'none'
     }
 // }
