@@ -41,7 +41,7 @@ header {
     margin: auto;
 }
 
-.start, .rerun {
+.start {
     width: 100px;
     padding: 10px 15px;
     font-size: .7rem;
@@ -55,7 +55,7 @@ header {
     margin: auto;
 }
 
-.start:hover, .rerun:hover {
+.start:hover {
     width: 100px;
     padding: 10px 15px;
     border: 1px solid #0f141e;
@@ -84,6 +84,8 @@ h1, .timer, .start {
 
 .count {
     font-family: 'Comfortaa', cursive;
+    display: none;
+    align-items: center;
 }
 
 .time {
@@ -94,12 +96,14 @@ h1, .timer, .start {
     align-items: center;
     padding: 0 5px;
     margin-right: 24%;
+    display: none;
 }
 
 .gOver {
     font-family: 'Comfortaa', cursive;
     color: red;
     display: none;
+    align-items: center;
 }
 
 .game {
@@ -128,10 +132,14 @@ h1, .timer, .start {
     display: none;
   }
 
-input:invalid:not(:placeholder-shown) {
-    border-color: red;
-  }
-  input:invalid:not(:placeholder-shown) + .form__error {
-    display: block;
+  .disabled {
+    width: 100px;
+    padding: 10px 15px;
+    font-size: .7rem;
+    text-align: center;
+    border: none;
+    font-family: inherit;
+    background-color: gray;
+    color: white
   }
   
