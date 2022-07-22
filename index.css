@@ -142,4 +142,22 @@ h1, .timer, .start {
     background-color: gray;
     color: white
   }
+
+  footer {
+    display: flex;
+    background-color: #0f141e;
+    bottom: 0;
+    color: #fff;
+    height: 100px;
+    width: 700px;
+    margin: auto;
+    margin-top: 7.8%;
+  }
+
+  .copyright {
+    display: flex;
+    font-family: 'Comfortaa', cursive;
+    align-items: center;
+    margin: auto;
+  }
   
