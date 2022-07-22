@@ -63,6 +63,7 @@
                 gOver.style.display = 'flex'
 
                 timerShow.style.color = 'red'
+                timerShow.innerHTML = '0:0'
 
                 timerInput.value = '1 мин.'
                 
