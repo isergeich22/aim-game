@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Comfortaa', cursive;
 }
 
 h1 {
@@ -51,7 +52,7 @@ header {
     background-color: #0f141e;
     color: #fff;
     cursor: pointer;
-    transition: all .3s;
+    transition: all .9s;
     margin: auto;
 }
 
@@ -161,3 +162,56 @@ h1, .timer, .start {
     margin: auto;
   }
   
+.success, .normal, .failed {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    height: 80px;
+    width: 700px;    
+    margin: auto;
+    margin-top: .5%;
+    display: none;
+    font-family: inherit;
+}
+
+.success {
+    text-align: center;
+}
+    .success p {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+    
+
+.failed {
+    text-align: center;
+}
+    .failed p {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
+    .failed .advice {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
+.normal {    
+    text-align: center;
+}
+    .normal p {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
+    .normal .advice {
+        color: red;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+

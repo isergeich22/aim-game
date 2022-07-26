@@ -4,6 +4,9 @@
     const number = document.querySelector('.number')
     const gOver = document.querySelector('.gOver')
     const minute = document.querySelector('#minutes')
+    const success = document.querySelector('.success')
+    const normal = document.querySelector('.normal')
+    const failed = document.querySelector('.failed')
     let timerInput = document.querySelector('#time')
     let i = 0
     
@@ -73,6 +76,10 @@
                 buttonRun.classList.remove('disabled')
                 buttonRun.classList.add('start')
 
+                if (i < 150) failed.style.display = 'flex'
+                else if (i <= 250 && i >= 150) normal.style.display = 'flex'
+                else success.style.display = 'flex'
+
                 setTimeout(hide, 30000)
 
                 i = 0
@@ -93,5 +100,8 @@
         timerShow.style.display = 'none'
         count.style.display = 'none'
         gOver.style.display = 'none'
+        success.style.display = 'none'
+        normal.style.display = 'none'
+        failed.style.display = 'none'
     }
 // }
