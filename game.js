@@ -36,26 +36,13 @@
 
     buttonRun.addEventListener('click', game)
 
-  function game() {
-        minute.disabled = true
-        gOver.style.display = 'none'
-        count.style.display = 'flex'
-        buttonRun.disabled = true
-        buttonRun.classList.add('disabled')
-        buttonRun.classList.remove('start')
-        timerShow.style.display = 'flex'
-        timerShow.style.color = 'black'
-        square.style.top = getRandomInt(0, 365) + 'px'
-        square.style.left = getRandomInt(0, 665) + 'px'
-        number.innerHTML = 0
-        timerInput.value = ''
-        timeMinut = parseInt(minute.value) * 60
+  function game() {    
+        
+        onReady()
 
         timer = setInterval(() => {
             seconds = timeMinut%60
-            minutes = timeMinut/60%60
-
-            
+            minutes = timeMinut/60%60            
         
             if (timeMinut <= 0) {
 
@@ -80,15 +67,12 @@
                 else if (i <= 250 && i >= 150) normal.style.display = 'flex'
                 else success.style.display = 'flex'
 
-                setTimeout(hide, 30000)
-
                 i = 0
                 
             } else {
 
-                let strTimer = `${Math.trunc(minutes)}:${seconds}`
-        
-                timerShow.innerHTML = strTimer
+                if (seconds < 10) timerShow.innerHTML = `${Math.trunc(minutes)}:0${seconds}`
+                else timerShow.innerHTML = `${Math.trunc(minutes)}:${seconds}`
 
             }
             --timeMinut
@@ -96,12 +80,23 @@
     square.style.display = 'block'
     }
 
-    function hide() {
-        timerShow.style.display = 'none'
-        count.style.display = 'none'
-        gOver.style.display = 'none'
+    function onReady() {
         success.style.display = 'none'
         normal.style.display = 'none'
         failed.style.display = 'none'
+        minute.disabled = true
+        gOver.style.display = 'none'
+        count.style.display = 'flex'
+        buttonRun.disabled = true
+        buttonRun.classList.add('disabled')
+        buttonRun.classList.remove('start')
+        timerShow.style.display = 'flex'
+        timerShow.style.color = 'black'
+        square.style.top = getRandomInt(0, 365) + 'px'
+        square.style.left = getRandomInt(0, 665) + 'px'
+        number.innerHTML = 0
+        timerInput.value = ''
+        timeMinut = parseInt(minute.value) * 60
     }
+
 // }
