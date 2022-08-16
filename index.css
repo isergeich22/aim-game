@@ -209,6 +209,11 @@ h1, .timer, .start {
         width: 300px;        
     }
 
+    .backdrop {
+        width: 300px;
+        height: 100px;
+    }
+
     footer, .info {
         font-size: .7rem;
     }
