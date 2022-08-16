@@ -15,7 +15,10 @@
     let maxHeight = parseInt(compute_width.height)
     let timerInput = document.querySelector('#time')
     let i = 0
+
+    timerInput.value = `${minute.value} мин.`
     
+
     minute.addEventListener('change', () => {
         timerInput.value = minute.value + ' мин.'
     })
@@ -68,7 +71,7 @@
                 timerShow.style.color = 'red'
                 timerShow.innerHTML = '0:00'
 
-                timerInput.value = '1 мин.'
+                timerInput.value = `${minute.value} мин.`
                 
                 minute.disabled = false
                 
