@@ -11,8 +11,8 @@
 <body>
     <h1>Aimgame</h1>
     <header>
-        <input type="range" class="volume" id="minutes" min="1" max="5" value="1" step="1">      
-        <input class="timer" type="text" name="time" id="time" value="1 мин." readonly/>
+        <input type="range" class="volume" id="minutes" min="0" max="5" value="0" step=".5">      
+        <input class="timer" type="text" name="time" id="time" value="" readonly/>
         <div class="buttons">
             <button class="start" id="button">Запустить</button>
         </div>
@@ -25,6 +25,9 @@
         </div>
         <div class="game">
             <div class="square">
+
+            </div>
+            <div id="space" class="backdrop">
 
             </div>
         </div>

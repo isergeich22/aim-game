@@ -1,5 +1,7 @@
 // Game-Logic
-//{
+//{ 
+    const gameBox = document.querySelector('.game')
+    const whiteSpace = document.querySelector('#space')
     const square = document.querySelector('.square')
     const number = document.querySelector('.number')
     const gOver = document.querySelector('.gOver')
@@ -7,6 +9,10 @@
     const success = document.querySelector('.success')
     const normal = document.querySelector('.normal')
     const failed = document.querySelector('.failed')
+    const compute_width = window.getComputedStyle(gameBox)
+    const compute_height = window.getComputedStyle(gameBox)
+    let maxWidth = parseInt(compute_width.width)
+    let maxHeight = parseInt(compute_width.height)
     let timerInput = document.querySelector('#time')
     let i = 0
     
@@ -14,9 +20,14 @@
         timerInput.value = minute.value + ' мин.'
     })
 
+    whiteSpace.addEventListener('click', () => {
+        i--;
+        number.innerHTML = i;
+    })
+
     square.addEventListener('click', () => {
-        square.style.top = getRandomInt(0, 365) + 'px'
-        square.style.left = getRandomInt(0, 665) + 'px'
+        square.style.top = getRandomInt(0, (maxHeight - 30)) + 'px'
+        square.style.left = getRandomInt(0, (maxWidth - 30)) + 'px'
         square.style.width = getRandomInt(8, 32) + 'px'
         square.style.height = square.style.width
         i++;
@@ -32,7 +43,7 @@
     
     const buttonRun = document.querySelector('.start')
     const count = document.querySelector('.count')
-    let timerShow = document.querySelector('.time')
+    const timerShow = document.querySelector('.time')
 
     buttonRun.addEventListener('click', game)
 
@@ -47,13 +58,15 @@
             if (timeMinut <= 0) {
 
                 clearInterval(timer)
+
+                whiteSpace.style.display = 'none'
         
                 square.style.display = 'none'
 
                 gOver.style.display = 'flex'
 
                 timerShow.style.color = 'red'
-                timerShow.innerHTML = '0:0'
+                timerShow.innerHTML = '0:00'
 
                 timerInput.value = '1 мин.'
                 
@@ -92,11 +105,12 @@
         buttonRun.classList.remove('start')
         timerShow.style.display = 'flex'
         timerShow.style.color = 'black'
-        square.style.top = getRandomInt(0, 365) + 'px'
-        square.style.left = getRandomInt(0, 665) + 'px'
+        whiteSpace.style.display = 'block'
+        square.style.top = getRandomInt(0, (maxHeight - 30)) + 'px'
+        square.style.left = getRandomInt(0, (maxWidth - 30)) + 'px'
         number.innerHTML = 0
         timerInput.value = ''
-        timeMinut = parseInt(minute.value) * 60
+        timeMinut = minute.value * 60
     }
 
 // }

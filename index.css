@@ -7,6 +7,11 @@
     font-family: 'Comfortaa', cursive;
 }
 
+*::selection {
+    background-color: #0f141e;
+    color: #fff;
+}
+
 h1 {
     font-family: 'Comfortaa', cursive;
     text-align: center;
@@ -114,7 +119,19 @@ h1, .timer, .start {
     margin: auto;
 }
 
+@media screen and (max-width: 1000px) {
+    .game {
+        width: 300px;
+        height: 100px;
+    }
+
+    header {
+        width: 300px;
+    }
+}
+
 .square {
+    z-index: 100;
     display: none;
     cursor: pointer;
     margin: 0;
@@ -122,6 +139,13 @@ h1, .timer, .start {
     width: 8px;
     height: 8px;
     background-color: rgb(255, 51, 0);
+}
+
+.backdrop {
+    width: 700px;
+    height: 400px;
+    opacity: 0;
+    margin-bottom: 5px;
 }
 
 .form__error {
@@ -153,13 +177,18 @@ h1, .timer, .start {
     width: 700px;
     margin: auto;
     margin-top: 7.8%;
-  }
+  }  
 
   .copyright {
     display: flex;
     font-family: 'Comfortaa', cursive;
     align-items: center;
     margin: auto;
+  }
+
+  .copyright span::selection {
+    background-color: #fff;
+    color:#0f141e;
   }
   
 .success, .normal, .failed {
@@ -173,6 +202,22 @@ h1, .timer, .start {
     display: none;
     font-family: inherit;
 }
+
+@media screen and (max-width: 1000px) {
+    
+    footer, .success, .normal, .failed {
+        width: 300px;        
+    }
+
+    footer, .info {
+        font-size: .7rem;
+    }
+
+    .success, .normal, .failed {
+        font-size: .5rem;
+    }
+    
+  }
 
 .success {
     text-align: center;
